@@ -1,0 +1,499 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;700&display=swap');
+
+:root {
+    --bg-color: #f0f2f5;
+    --container-bg: #ffffff;
+    --header-bg: #6a0dad; /* Purple theme */
+    --header-text: #ffffff;
+    --user-bubble-bg: #e0cffc; /* Lighter purple */
+    --bot-bubble-bg: #f1f0f0;
+    --input-bg: #ffffff;
+    --button-bg: #6a0dad;
+    --button-hover-bg: #5a0bad;
+    --text-color: #333;
+    --border-color: #d1d1d1;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --loading-dot-color: #6a0dad;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Noto Sans Bengali', 'Noto Sans', Arial, sans-serif;
+    background: linear-gradient(135deg, #e0f7fa 0%, #f1f8e9 100%);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.notice-ai-container {
+    max-width: 900px;
+    margin: 36px auto 24px auto;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 6px 32px rgba(44, 62, 80, 0.13);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 80vh;
+    border: 1.5px solid #b2dfdb;
+}
+
+.notice-header {
+    background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
+    color: #fff;
+    padding: 24px 36px 18px 36px;
+    border-bottom-left-radius: 32px;
+    border-bottom-right-radius: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+.school-icon {
+    width: 54px;
+    height: 54px;
+    background: #fff;
+    border-radius: 50%;
+    padding: 7px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.notice-header h1 {
+    font-size: 2.1rem;
+    margin: 0 0 2px 0;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #fff;
+}
+.subtitle {
+    font-size: 1.08rem;
+    color: #e0f7fa;
+    margin: 0;
+    font-weight: 400;
+}
+.settings-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.7rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.settings-btn:hover {
+    color: #ffd166;
+}
+
+header h1 {
+    font-size: 1.4em;
+    margin: 0;
+}
+
+#settings-btn {
+    background: none;
+    border: none;
+    color: var(--header-text);
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+#settings-btn:hover {
+    transform: rotate(45deg);
+}
+
+.notice-main {
+    display: flex;
+    gap: 32px;
+    padding: 32px 36px 32px 36px;
+    flex-wrap: wrap;
+}
+.notice-form-section, .notice-output-section {
+    flex: 1 1 340px;
+    min-width: 320px;
+    background: #f8f9fa;
+    border-radius: 18px;
+    padding: 28px 24px 24px 24px;
+    box-shadow: 0 2px 12px rgba(44, 62, 80, 0.04);
+    margin-bottom: 12px;
+}
+.notice-form-section h2, .notice-output-section h2 {
+    margin-top: 0;
+    font-size: 1.25rem;
+    color: #185a9d;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+.notice-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.form-group label {
+    font-size: 1rem;
+    color: #185a9d;
+    font-weight: 600;
+}
+.form-group input {
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1.5px solid #b2dfdb;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.2s;
+    background: #fff;
+}
+.form-group input:focus {
+    border: 1.5px solid #43cea2;
+}
+.notice-submit-btn {
+    background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+}
+.notice-submit-btn:hover {
+    background: linear-gradient(90deg, #185a9d 0%, #43cea2 100%);
+}
+
+.notice-chat-window {
+    background: #fff;
+    border-radius: 12px;
+    min-height: 220px;
+    max-height: 420px;
+    overflow-y: auto;
+    box-shadow: 0 1px 6px rgba(44, 62, 80, 0.06);
+    padding: 18px 16px 0 16px;
+    border: 1.5px solid #b2dfdb;
+}
+.notice-chat-messages {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.message-bubble {
+    max-width: 95%;
+    padding: 16px 20px;
+    border-radius: 14px;
+    font-size: 1.08rem;
+    line-height: 1.7;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.04);
+    margin-bottom: 4px;
+    word-break: break-word;
+    background: #e3f2fd;
+    color: #222;
+    border: 1.5px solid #b2dfdb;
+}
+.user-message {
+    align-self: flex-end;
+    background: #c8e6c9;
+    color: #185a9d;
+    border: 1.5px solid #81c784;
+}
+.bot-message {
+    align-self: flex-start;
+    background: #fffde7;
+    color: #222;
+    border: 1.5px solid #ffd54f;
+}
+@media (max-width: 900px) {
+    .notice-ai-container {
+        max-width: 100vw;
+        min-height: 100vh;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    .notice-header {
+        padding: 16px 8px 12px 8px;
+        border-radius: 0;
+    }
+    .notice-main {
+        padding: 12px 4px 12px 4px;
+        gap: 12px;
+    }
+    .notice-form-section, .notice-output-section {
+        padding: 12px 4px 12px 4px;
+        min-width: 0;
+    }
+    .modal-content {
+        padding: 18px 8px 18px 8px;
+    }
+}
+
+.input-area {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--input-bg);
+    flex-shrink: 0;
+}
+
+#user-input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    font-size: 1em;
+    margin-right: 10px;
+    transition: border-color 0.2s ease;
+}
+
+#user-input:focus {
+    outline: none;
+    border-color: var(--button-bg);
+}
+
+#send-btn {
+    background-color: var(--button-bg);
+    color: white;
+    border: none;
+    border-radius: 50%; /* Make it circular */
+    width: 45px;
+    height: 45px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#send-btn:hover {
+    background-color: var(--button-hover-bg);
+}
+#send-btn:active {
+    transform: scale(0.95);
+}
+
+/* Loading Indicator */
+#loading {
+    position: absolute; /* Position relative to chat-window */
+    bottom: 70px; /* Adjust as needed to position above input */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dot-flashing {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: var(--loading-dot-color);
+  color: var(--loading-dot-color);
+  animation: dotFlashing 1s infinite linear alternate;
+  animation-delay: .5s;
+  margin: 0 15px; /* Provide space for pseudo-elements */
+}
+
+.dot-flashing::before, .dot-flashing::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
+
+.dot-flashing::before {
+  left: -15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: var(--loading-dot-color);
+  color: var(--loading-dot-color);
+  animation: dotFlashing 1s infinite alternate;
+  animation-delay: 0s;
+}
+
+.dot-flashing::after {
+  left: 15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: var(--loading-dot-color);
+  color: var(--loading-dot-color);
+  animation: dotFlashing 1s infinite alternate;
+  animation-delay: 1s;
+}
+
+@keyframes dotFlashing {
+  0% {
+    background-color: var(--loading-dot-color);
+  }
+  50%,
+  100% {
+    background-color: rgba(106, 13, 173, 0.2); /* Lighter version */
+  }
+}
+
+
+/* Modal Styles */
+.modal {
+    display: flex; /* Hidden by default using .hidden class */
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Start hidden for transition */
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none; /* Prevent interaction when hidden */
+}
+
+.modal:not(.hidden) {
+    opacity: 1;
+    pointer-events: auto; /* Allow interaction when visible */
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    transform: scale(0.9); /* Start smaller for transition */
+    transition: transform 0.3s ease-in-out;
+}
+.modal:not(.hidden) .modal-content {
+     transform: scale(1);
+}
+
+
+.modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: var(--header-bg);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.modal-content label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+#api-key-input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+#save-api-key-btn {
+    background-color: var(--button-bg);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s ease;
+    display: block; /* Make it block to center potentially */
+    width: 100%;
+    margin-top: 10px;
+}
+
+#save-api-key-btn:hover {
+    background-color: var(--button-hover-bg);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #333;
+    text-decoration: none;
+}
+
+#api-key-status {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: green;
+    min-height: 1.2em; /* Prevent layout shift */
+}
+
+.modal a {
+    color: var(--button-bg);
+    text-decoration: none;
+}
+.modal a:hover {
+    text-decoration: underline;
+}
+
+/* Helper class */
+.hidden {
+    display: none !important; /* Use important only if necessary, could also manage via JS adding/removing class that sets display flex/none */
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    body {
+        padding: 0;
+        align-items: stretch; /* Allow container to take full height */
+    }
+    .chat-container {
+        height: 100vh;
+        max-height: none;
+        border-radius: 0;
+        box-shadow: none;
+        max-width: 100%;
+    }
+     header {
+        border-radius: 0;
+    }
+     #loading {
+        bottom: 80px; /* Adjust loading position for smaller screens */
+    }
+}
