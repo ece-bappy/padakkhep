@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;700&display=swap');
 
 :root {
-    --bg-color: #f0f2f5;
-    --container-bg: #ffffff;
-    --header-bg: #6a0dad; /* Purple theme */
-    --header-text: #ffffff;
-    --user-bubble-bg: #e0cffc; /* Lighter purple */
-    --bot-bubble-bg: #f1f0f0;
-    --input-bg: #ffffff;
-    --button-bg: #6a0dad;
-    --button-hover-bg: #5a0bad;
-    --text-color: #333;
-    --border-color: #d1d1d1;
-    --shadow-color: rgba(0, 0, 0, 0.1);
-    --loading-dot-color: #6a0dad;
+    --bg-color: #f6f2ff;
+    --container-bg: #fffaff;
+    --header-bg: #7c3aed; /* Deep purple */
+    --header-text: #fff;
+    --user-bubble-bg: #e9d8fd; /* Lavender */
+    --bot-bubble-bg: #f3e8ff; /* Light lavender */
+    --input-bg: #f6f2ff;
+    --button-bg: #a78bfa; /* Soft purple */
+    --button-hover-bg: #7c3aed;
+    --text-color: #3d246c;
+    --border-color: #d1b3ff;
+    --shadow-color: rgba(124, 58, 237, 0.08);
+    --loading-dot-color: #a78bfa;
 }
 
 * {
@@ -24,7 +24,7 @@
 
 body {
     font-family: 'Noto Sans Bengali', 'Noto Sans', Arial, sans-serif;
-    background: linear-gradient(135deg, #e0f7fa 0%, #f1f8e9 100%);
+    background: linear-gradient(135deg, #e9d8fd 0%, #f6f2ff 100%);
     min-height: 100vh;
     margin: 0;
     padding: 0;
@@ -33,19 +33,19 @@ body {
 .notice-ai-container {
     max-width: 900px;
     margin: 36px auto 24px auto;
-    background: #fff;
+    background: var(--container-bg);
     border-radius: 20px;
-    box-shadow: 0 6px 32px rgba(44, 62, 80, 0.13);
+    box-shadow: 0 6px 32px var(--shadow-color);
     overflow: hidden;
     display: flex;
     flex-direction: column;
     min-height: 80vh;
-    border: 1.5px solid #b2dfdb;
+    border: 1.5px solid var(--border-color);
 }
 
 .notice-header {
-    background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
-    color: #fff;
+    background: linear-gradient(90deg, #a78bfa 0%, #7c3aed 100%);
+    color: var(--header-text);
     padding: 24px 36px 18px 36px;
     border-bottom-left-radius: 32px;
     border-bottom-right-radius: 32px;
@@ -61,34 +61,34 @@ body {
 .school-icon {
     width: 54px;
     height: 54px;
-    background: #fff;
+    background: #e9d8fd;
     border-radius: 50%;
     padding: 7px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 8px var(--shadow-color);
 }
 .notice-header h1 {
     font-size: 2.1rem;
     margin: 0 0 2px 0;
     font-weight: 800;
     letter-spacing: 1px;
-    color: #fff;
+    color: var(--header-text);
 }
 .subtitle {
     font-size: 1.08rem;
-    color: #e0f7fa;
+    color: #ede9fe;
     margin: 0;
     font-weight: 400;
 }
 .settings-btn {
     background: none;
     border: none;
-    color: #fff;
+    color: var(--header-text);
     font-size: 1.7rem;
     cursor: pointer;
     transition: color 0.2s;
 }
 .settings-btn:hover {
-    color: #ffd166;
+    color: #c4b5fd;
 }
 
 header h1 {
@@ -118,16 +118,16 @@ header h1 {
 .notice-form-section, .notice-output-section {
     flex: 1 1 340px;
     min-width: 320px;
-    background: #f8f9fa;
+    background: #f6f2ff;
     border-radius: 18px;
     padding: 28px 24px 24px 24px;
-    box-shadow: 0 2px 12px rgba(44, 62, 80, 0.04);
+    box-shadow: 0 2px 12px var(--shadow-color);
     margin-bottom: 12px;
 }
 .notice-form-section h2, .notice-output-section h2 {
     margin-top: 0;
     font-size: 1.25rem;
-    color: #185a9d;
+    color: #7c3aed;
     font-weight: 700;
     margin-bottom: 18px;
 }
@@ -143,23 +143,23 @@ header h1 {
 }
 .form-group label {
     font-size: 1rem;
-    color: #185a9d;
+    color: #7c3aed;
     font-weight: 600;
 }
 .form-group input {
     padding: 12px 14px;
     border-radius: 8px;
-    border: 1.5px solid #b2dfdb;
+    border: 1.5px solid #d1b3ff;
     font-size: 1rem;
     outline: none;
     transition: border 0.2s;
     background: #fff;
 }
 .form-group input:focus {
-    border: 1.5px solid #43cea2;
+    border: 1.5px solid #a78bfa;
 }
 .notice-submit-btn {
-    background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
+    background: linear-gradient(90deg, #a78bfa 0%, #7c3aed 100%);
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -173,10 +173,10 @@ header h1 {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+    box-shadow: 0 2px 8px var(--shadow-color);
 }
 .notice-submit-btn:hover {
-    background: linear-gradient(90deg, #185a9d 0%, #43cea2 100%);
+    background: linear-gradient(90deg, #7c3aed 0%, #a78bfa 100%);
 }
 
 .notice-chat-window {
@@ -185,9 +185,9 @@ header h1 {
     min-height: 220px;
     max-height: 420px;
     overflow-y: auto;
-    box-shadow: 0 1px 6px rgba(44, 62, 80, 0.06);
+    box-shadow: 0 1px 6px var(--shadow-color);
     padding: 18px 16px 0 16px;
-    border: 1.5px solid #b2dfdb;
+    border: 1.5px solid #d1b3ff;
 }
 .notice-chat-messages {
     display: flex;
@@ -200,24 +200,24 @@ header h1 {
     border-radius: 14px;
     font-size: 1.08rem;
     line-height: 1.7;
-    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.04);
+    box-shadow: 0 2px 8px var(--shadow-color);
     margin-bottom: 4px;
     word-break: break-word;
-    background: #e3f2fd;
-    color: #222;
-    border: 1.5px solid #b2dfdb;
+    background: #e9d8fd;
+    color: var(--text-color);
+    border: 1.5px solid #d1b3ff;
 }
 .user-message {
     align-self: flex-end;
-    background: #c8e6c9;
-    color: #185a9d;
-    border: 1.5px solid #81c784;
+    background: #c4b5fd;
+    color: #7c3aed;
+    border: 1.5px solid #a78bfa;
 }
 .bot-message {
     align-self: flex-start;
-    background: #fffde7;
-    color: #222;
-    border: 1.5px solid #ffd54f;
+    background: #f3e8ff;
+    color: #3d246c;
+    border: 1.5px solid #d1b3ff;
 }
 @media (max-width: 900px) {
     .notice-ai-container {
@@ -270,7 +270,7 @@ header h1 {
     background-color: var(--button-bg);
     color: white;
     border: none;
-    border-radius: 50%; /* Make it circular */
+    border-radius: 50%;
     width: 45px;
     height: 45px;
     font-size: 1.2em;
@@ -280,7 +280,6 @@ header h1 {
     justify-content: center;
     align-items: center;
 }
-
 #send-btn:hover {
     background-color: var(--button-hover-bg);
 }
@@ -291,7 +290,7 @@ header h1 {
 /* Loading Indicator */
 #loading {
     position: absolute; /* Position relative to chat-window */
-    bottom: 70px; /* Adjust as needed to position above input */
+    bottom: 24px; /* Adjust as needed to position above input */
     left: 50%;
     transform: translateX(-50%);
     padding: 5px 10px;
@@ -350,7 +349,7 @@ header h1 {
   }
   50%,
   100% {
-    background-color: rgba(106, 13, 173, 0.2); /* Lighter version */
+    background-color: #e9d8fd;
   }
 }
 
